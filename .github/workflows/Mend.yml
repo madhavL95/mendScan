@@ -8,8 +8,8 @@ on:
     inputs:
       config_file:
         description: 'Path of Mend Config file'
-        default: 'wss-unified-agent.config'
-        required: true
+        default: 'wss-unified-agent-default.config'
+        required: false
         type: string
       product_Name:
         description: 'Application Name'
@@ -18,6 +18,10 @@ on:
       project_Name:
         description: 'Module Name'
         required: true
+        type: string
+      project_Version:
+        description: 'Version the project if required'
+        required: false
         type: string
     secrets:
       apikey:
@@ -39,4 +43,4 @@ jobs:
         run: curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
       # Runs Mend scan
       - name: Mend Scan
-        run: java -jar wss-unified-agent.jar -c ${{ secrets.config_file }} -apikey ${{ secrets.apikey }} -userkey ${{ secrets.userkey }}
+        run: java -jar wss-unified-agent.jar -c ${{ inputs.config_file }} -apikey ${{ secrets.apikey }} -userkey ${{ secrets.userkey }} -project ${{ inputs.project_Name }} -projectVersion ${{ inputs.project_Version }} -product ${{ inputs.product_Name }} -projectTag GitHub:$GITHUB_REPOSITORY
