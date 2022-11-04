@@ -38,8 +38,8 @@ jobs:
       - uses: actions/checkout@v3
       
       # For debugging purpose.
-      - name: "Print Working Directory from Reusable action"
-        run: echo "Directory is ${GITHUB_WORKSPACE}"
+      - name: "List files and folders"
+        run: ls
         
       # Download unified agent jar file
       - name: Download the unified agent scanner
