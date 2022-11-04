@@ -36,6 +36,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      # For debugging purpose.
+      - name: "Print Working Directory from Reusable action"
+        run: echo "Directory is ${GITHUB_WORKSPACE}"
+        
       # Download unified agent jar file
       - name: Download the unified agent scanner
         run: curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
