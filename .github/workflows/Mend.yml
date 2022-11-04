@@ -8,7 +8,7 @@ on:
     inputs:
       config_file:
         description: 'Path of Mend Config file'
-        default: 'wss-unified-agent-default.config'
+        default: 'madhavL95/mendScan/wss-unified-agent-default.config'
         required: false
         type: string
       product_Name:
