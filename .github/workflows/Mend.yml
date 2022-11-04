@@ -25,10 +25,8 @@ on:
         type: string
     secrets:
       apikey:
-        description: 'API key from Welcome email'
         required: true
       userkey: 
-        description: 'User Key from your Mend profile/ service account'
         required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
