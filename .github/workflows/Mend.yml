@@ -40,7 +40,9 @@ jobs:
       # For debugging purpose.
       - name: "List files and folders"
         run: ls
-        
+      # Download default config file
+      - name: Download the default config file
+        run: curl -LJO https://raw.githubusercontent.com/madhavL95/mendScan/main/wss-unified-agent-default.config
       # Download unified agent jar file
       - name: Download the unified agent scanner
         run: curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
